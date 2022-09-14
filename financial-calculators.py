@@ -35,8 +35,7 @@ while True:
 
                 continue
         
-        total_amount = round(total_amount,2)
-        print("The total amount after {} years is R{}".format(years, total_amount))
+        print("The total amount after {} years is R{:0,.2f}".format(years, total_amount))
 
         break
 
@@ -45,10 +44,9 @@ while True:
         i_rate = float(input("Enter the interest rate as a percentage without the % sign: "))
         months = int(input("Enter the number of months you plan to take to repay the bond: "))
 
-        amount = (i_rate*p_value)/(1 - math.pow((1 + i_rate),-months))
-        amount = round(amount,2)
+        amount = ((i_rate/100)*p_value)/(1 - math.pow((1 + (i_rate/100)),-months))
 
-        print("The amount of money to be repaid each month is R{}".format(amount))
+        print("The amount of money to be repaid each month is R{:0,.2f}".format(amount))
 
         break
 
