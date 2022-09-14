@@ -27,7 +27,7 @@ while True:
                 break
 
             elif interest == "compound":
-                total_amount = principal*math.pow((1+i_rate),years)
+                total_amount = principal*math.pow((1+(i_rate/100)),years)
                 break
 
             else:
