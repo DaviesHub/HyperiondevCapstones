@@ -8,7 +8,7 @@ print("bond - to calculate the amount you'll have to pay on a home loan")
 
 while True:
     user_choice = input("Enter your choice here: ")
-    # Convert user input to lower case
+    # Convert user input to lower case in the case of user entering strings of different cases
     user_choice = user_choice.lower()
 
 
