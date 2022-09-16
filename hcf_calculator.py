@@ -37,5 +37,3 @@ def hcf_calculator(num1, num2):
     print("The highest common factor of {} and {} is {}".format(num1, num2, hcf))
 
     return hcf
-
-hcf_calculator(120, 96)
