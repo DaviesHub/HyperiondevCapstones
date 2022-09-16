@@ -44,7 +44,7 @@ while True:
         i_rate = float(input("Enter the interest rate as a percentage without the % sign: "))
         months = int(input("Enter the number of months you plan to take to repay the bond: "))
 
-        amount = ((i_rate/100)*p_value)/(1 - math.pow((1 + (i_rate/100)),-months))
+        amount = ((i_rate/1200)*p_value)/(1 - math.pow((1 + (i_rate/1200)),-months))
 
         print("The amount of money to be repaid each month is R{:0,.2f}".format(amount))
 
