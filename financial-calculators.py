@@ -41,7 +41,7 @@ while True:
 
     elif user_choice == "bond":
         p_value = float(input("Enter the present value of the house: "))
-        i_rate = float(input("Enter the interest rate as a percentage without the % sign: "))
+        i_rate = float(input("Enter the annual interest rate as a percentage without the % sign: "))
         months = int(input("Enter the number of months you plan to take to repay the bond: "))
 
         amount = ((i_rate/1200)*p_value)/(1 - math.pow((1 + (i_rate/1200)),-months))
