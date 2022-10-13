@@ -10,9 +10,9 @@ def generate_grid(s):
 
     sq_grid = [[None] * s for null in range(s)] # Initialize grid to be returned
     items = ["-", "-", "-", "#"]
-    idx = int(random.random() * len(items))
     for i in range(s):
         for j in range(s):
+            idx = int(random.random() * len(items))
             sq_grid[i][j] = items[idx]
 
     return sq_grid
@@ -25,8 +25,8 @@ def minesweeper(grid):
     num_cols = len(grid)
 
     output_grid = [["#"] * num_cols for null in range(num_rows)] # Initialize output grid
-    for i in range(1, len(grid)): # Code for interior values
-        for j in range(1, len(grid)):
+    for i in range(1, len(grid)-1): # Code for interior values
+        for j in range(1, len(grid)-1):
             mine_count = 0
             if grid[i][j] == "-":
                 # Upward check
@@ -199,10 +199,10 @@ def minesweeper(grid):
             if grid[i+1][0] == "#": # Bottom center check
                 mine_count += 1
 
-            output_grid[0][j] = mine_count
+            output_grid[i][0] = mine_count
 
         else:
-            output_grid[0][j] = "#"
+            output_grid[i][0] = "#"
 
     # Right borders
     for i in range(1, num_rows-1):
@@ -223,9 +223,13 @@ def minesweeper(grid):
             if grid[i+1][-1] == "#": # Bottom center check
                 mine_count += 1
 
-            output_grid[0][j] = mine_count
+            output_grid[i][-1] = mine_count
 
         else:
-            output_grid[0][j] = "#"
+            output_grid[i][-1] = "#"
 
-    return grid
+    return output_grid
+
+g = generate_grid(5)
+print(g)
+print(minesweeper(g))
