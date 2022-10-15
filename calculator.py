@@ -72,11 +72,6 @@ def calculator():
     fhand.close()
 
 
-def view_equations(file):
-
-
-
-
 print("\n=== This calculator performs arithmetic operations on two numbers===\n")
 while True:
     menu = input('''\nMenu:
@@ -88,21 +83,19 @@ while True:
         calculator()
 
     elif menu == "2":
-        view_equations()
+        while True:
+            filename = input("\nEnter the name of the txt file to read equations from: ")
+            try:
+                fhand = open(filename, 'r')
+                content = fhand.read()
+                print(content)
+                fhand.close()
+                break
+            except FileNotFoundError:
+                print("The file does not exist")             
 
     elif menu == "3":
         exit()
 
     else:
         print("Invalid option.")
-
-
-
-
-
-
-
-
-
-
-
