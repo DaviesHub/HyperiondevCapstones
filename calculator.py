@@ -72,7 +72,7 @@ def calculator():
     fhand.close()
 
 
-print("\n=== This calculator performs arithmetic operations on two numbers===\n")
+print("\n=== This calculator performs arithmetic operations on two numbers===")
 while True:
     menu = input('''\nMenu:
 ===> Enter 1 to use calculator
